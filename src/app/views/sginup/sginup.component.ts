@@ -18,6 +18,7 @@ export class SginupComponent implements OnInit {
   token: any;
   invalidEmail: boolean = false;
   invalidAge: boolean = false;
+  invalidMobile: boolean = false;
 
   signUP(credentials: any) {
     console.log(credentials);
@@ -37,6 +38,9 @@ export class SginupComponent implements OnInit {
         if (httpError.error.errors.age.name === 'ValidatorError') {
           this.invalidAge = true;
         }
+        if (httpError.error.errors.mobile.name === 'ValidatorError') {
+          this.invalidMobile = true;
+        }
       },
     });
   }
@@ -46,6 +50,9 @@ export class SginupComponent implements OnInit {
   }
   changeAge() {
     this.invalidAge = false;
+  }
+  changeMobile() {
+    this.invalidMobile = false;
   }
 
   ngOnInit(): void {}
