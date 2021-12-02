@@ -6,8 +6,8 @@ import { SginupComponent } from './views/sginup/sginup.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
-  {path:'/sginup',component:SginupComponent},
-  {path:'/profile',component:ProfileComponent}
+  {path:'sginup',component:SginupComponent},
+  {path:'profile',component:ProfileComponent}
 ];
 
 @NgModule({
