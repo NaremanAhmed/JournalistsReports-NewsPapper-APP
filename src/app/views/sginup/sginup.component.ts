@@ -32,15 +32,17 @@ export class SginupComponent implements OnInit {
       },
       error: (httpError: any) => {
         console.log(httpError);
-        if (httpError.error.code === 11000) {
-          this.invalidEmail = true;
-        }
-        if (httpError.error.errors.age.name === 'ValidatorError') {
-          this.invalidAge = true;
-        }
-        if (httpError.error.errors.mobile.name === 'ValidatorError') {
+        if (httpError.error.errors.mobile) {
+          console.log('test')
           this.invalidMobile = true;
         }
+       else if (httpError.error.code === 11000) {
+          this.invalidEmail = true;
+        }
+       else if (httpError.error.errors.age.name === 'ValidatorError') {
+          this.invalidAge = true;
+        }
+       
       },
     });
   }
